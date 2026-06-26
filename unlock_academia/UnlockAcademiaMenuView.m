@@ -178,7 +178,7 @@ static UnlockAcademiaMenuView *gMenuView = nil;
     closeBtn.layer.cornerRadius = 18;
     closeBtn.tintColor = [UIColor whiteColor];
     [closeBtn setImage:[UIImage systemImageNamed:@"xmark"] forState:UIControlStateNormal];
-    [closeBtn setPreferredSymbolConfiguration:[UIImageSymbolConfiguration configurationWithPointSize:14 weight:UIImageSymbolWeightBold] forState:UIControlStateNormal];
+    [closeBtn setPreferredSymbolConfiguration:[UIImageSymbolConfiguration configurationWithPointSize:14 weight:UIImageSymbolWeightBold] forImageInState:UIControlStateNormal];
     [closeBtn addTarget:self action:@selector(closeTapped) forControlEvents:UIControlEventTouchUpInside];
     [contentView addSubview:closeBtn];
     
