@@ -122,7 +122,8 @@ static void hooked_setMethodCallHandler(id self, SEL _cmd, id handler) {
                     } else {
                         Class fe = NSClassFromString(@"FlutterError");
                         if (fe) {
-                            ((void (^)(id))result)([fe errorWithCode:@"INSUFFICIENT_FUNDS" message:@"رصيد غير كافٍ" details:nil]);
+                            id (*msgSend_3id)(id, SEL, id, id, id) = (id (*)(id, SEL, id, id, id))objc_msgSend;
+                            ((void (^)(id))result)(msgSend_3id(fe, @selector(errorWithCode:message:details:), @"INSUFFICIENT_FUNDS", @"رصيد غير كافٍ", nil));
                         } else {
                             ((void (^)(id))result)(@{@"error": @"INSUFFICIENT_FUNDS", @"message": @"رصيد غير كافٍ"});
                         }
