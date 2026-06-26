@@ -39,7 +39,8 @@ xcrun -sdk "$SDK" clang \
     -o "$OUT" \
     unlock_academia.m \
     -framework Foundation \
-    -framework UIKit
+    -framework UIKit \
+    -framework CoreGraphics
 
 echo "[+] Signing $OUT with ad-hoc identity..."
 codesign -f -s - "$OUT"

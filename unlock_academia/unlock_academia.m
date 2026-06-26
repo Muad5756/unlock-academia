@@ -65,10 +65,6 @@ static void swz(Class cls, SEL sel, IMP newImp, IMP *oldOut) {
     if (m) { *oldOut = method_setImplementation(m, newImp); }
 }
 
-static void swzClass(Class cls, SEL sel, IMP newImp, IMP *oldOut) {
-    swz(object_getClass(cls), sel, newImp, oldOut);
-}
-
 static void swzIfSafe(Class cls, SEL sel, IMP newImp) {
     IMP dummy;
     swz(cls, sel, newImp, &dummy);
@@ -344,10 +340,6 @@ static void unlock_dragButton(id self, SEL _cmd, UIPanGestureRecognizer *gesture
     CGPoint pt = [gesture translationInView:parent];
     btn.transform = CGAffineTransformTranslate(btn.transform, pt.x, pt.y);
     [gesture setTranslation:CGPointZero inView:parent];
-}
-
-static void removeFloatingMenuButton(void) {
-    if (menuBtn) { [menuBtn removeFromSuperview]; menuBtn = nil; }
 }
 
 #pragma mark - Jailbreak Detection Bypasses (respect DRM toggle)
