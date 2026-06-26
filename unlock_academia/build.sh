@@ -37,7 +37,7 @@ xcrun -sdk "$SDK" clang \
     -dynamiclib \
     -install_name "/Library/MobileSubstrate/DynamicLibraries/unlock_academia.dylib" \
     -o "$OUT" \
-    unlock_academia.m \
+    unlock_academia.m BypassSettings.m SwizzleHelper.m BypassHooks.m UnlockAcademiaMenuView.m \
     -framework Foundation \
     -framework UIKit \
     -framework CoreGraphics

@@ -6,7 +6,7 @@ ARCHS = arm64
 include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = unlock_academia
-unlock_academia_FILES = unlock_academia.m
+unlock_academia_FILES = unlock_academia.m BypassSettings.m SwizzleHelper.m BypassHooks.m UnlockAcademiaMenuView.m
 unlock_academia_CFLAGS = -fobjc-arc
 unlock_academia_FRAMEWORKS = UIKit Foundation
 unlock_academia_PRIVATE_FRAMEWORKS =
