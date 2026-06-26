@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Build artifacts
+output/
+tmp/
+
+# IPA files (large binaries)
+*.ipa
+
+# Extracted IPA payload (large binaries)
+Payload/
+ipa_payload/
+iTunesArtwork
+
+# dylib (built by CI)
+unlock_academia/out/
+unlock_academia/unlock_academia.dylib
+
+# Nested git remnants
+unlock_academia/.github/
+
+# macOS
+.DS_Store

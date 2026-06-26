@@ -1,0 +1,29 @@
+name: Build unlock_academia.dylib
+
+on:
+  workflow_dispatch:
+
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    defaults:
+      run:
+        working-directory: unlock_academia
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build dylib
+        run: |
+          chmod +x build.sh
+          ./build.sh
+
+      - name: Upload dylib artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: unlock_academia.dylib
+          path: unlock_academia/unlock_academia.dylib
+          if-no-files-found: error

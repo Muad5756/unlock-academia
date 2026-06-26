@@ -1,0 +1,9 @@
+Package: com.securityresearch.unlockacademia
+Name: unlock_academia
+Version: 1.0.0
+Architecture: iphoneos-arm
+Description: Runtime bypass for Academia iOS (educational/defensive research)
+Maintainer: Security Research
+Author: Security Research
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000)
